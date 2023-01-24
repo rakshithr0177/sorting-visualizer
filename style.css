@@ -1,0 +1,187 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: grey;
+    overflow: hidden;
+    width: 100%;
+    transition-property: all;
+    transition-duration: 0.5s;
+    position: fixed;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar{
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.nav-menu{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    gap: 60px;
+    font-size: 20px;
+    font-family: "Helvetica Neue",Helvetica,Arial;
+}
+
+.logo{
+    font-size: 2rem;
+}
+
+.nav-link{
+    transition:0.7s ease
+}
+
+.nav-link:hover {
+    color: dodgerblue;
+}
+
+
+.menu-btn{
+    display:none;
+}
+
+.stricky{
+    position:fixed;
+}
+
+@media(max-width:768px){
+        .menu-btn {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+            border: 3px solid white;
+            border-radius: 10px;
+        }
+    
+        .menu-btn_burger {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+            transition: all 0.5s ease-in-out;
+        }
+        .menu-btn_burger::before,
+        .menu-btn_burger::after {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+            transition: all 0.5s ease-in-out;
+        }
+    
+        .menu-btn_burger::before {
+            transform: translateY(-10px);
+        }
+    
+        .menu-btn_burger::after {
+            transform: translateY(10px);
+        }
+    
+        /* Amination */
+        .menu-btn.open .menu-btn_burger {
+            transform: translateX(-50px);
+            background-color: transparent;
+            box-shadow: none;
+        }
+    
+        .menu-btn.open .menu-btn_burger::before {
+            transform: rotate(45deg) translate(35px, -35px);
+    
+        }
+    
+        .menu-btn.open .menu-btn_burger::after {
+            transform: rotate(-45deg) translate(35px, 35px);
+        }
+
+    /* nav menu */
+    .nav-menu{
+        position:fixed;
+        left:-100%;
+        top:70px;
+        gap:0;
+        flex-direction:column;
+        background-color:grey;
+        width:100%;
+        text-align:center;
+        transition:0.3s;
+    }
+    .nav-items{
+        margin: 16px 0;
+    }
+    .nav-menu.active{
+        left: 0;
+    }
+}
+
+
+
+/* This is of sorting visualizer */
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.head{
+    margin-top: 80px;
+}
+
+
+#container{
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+    /*  self written */
+    width:50%;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.bar{
+    background: black;
+    width: 20px;
+    margin: 1px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 3rem;
+    gap: 2rem;
+}
+
+.b{
+    width: 5rem;
+    height: 2rem;
+    background: brown;
+    border: none;
+    color: white;
+    font-size: medium;
+    border-radius: 0.5rem;
+}
